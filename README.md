@@ -24,6 +24,59 @@ Built for **Contoso USMF** data (or your own exports), optimized for **GPU accel
 
 ---
 
+# 📊 Capability Comparison  
+### *D365 Sales Analytics Agent vs. Microsoft Copilot (Infographic Style)*
+
+```mermaid
+flowchart TB
+    A[📊 Capability Comparison:<br/>D365 Sales Analytics Agent vs. Microsoft Copilot]
+
+    subgraph D365["Your D365 Sales Analytics Agent"]
+        T1["✔ Data Source Transparency<br/>Shows exact SQL for every numeric result"]
+        T2["✔ Numeric Accuracy<br/>Zero hallucinations — SQL is the source of truth"]
+        T3["✔ Execution Mode:<br/>Hybrid SQL → RAG → LLM (explainable)"]
+        T4["✔ Customizability:<br/>SQL templates, synonyms, routing, thresholds"]
+        T5["✔ Local Execution (GPU accelerated)"]
+        T6["✔ 100% Private — no cloud dependency"]
+        T7["✔ Developer-controlled LLM (DeepSeek R1 via Ollama)"]
+        T8["✔ Transparent Embeddings (ChromaDB)"]
+        T9["✔ Full Explainability — SQL + reasoning chain shown"]
+        T10["✔ Error Handling — Never fabricates missing data"]
+        T11["✔ GPU-accelerated PyTorch inference"]
+        T12["✔ Offline Mode Supported"]
+        T13["✔ Data Validation:<br/>D365 FO → USMF → SalesOrderHeadersV2"]
+        T14["✔ Full Observability:<br/>SQL logs, vector logs, test suite"]
+        T15["✔ Extensible:<br/>Add new datasets, new LLMs, custom pipelines"]
+        T16["✔ Testing Framework:<br/>Full pytest suite"]
+        T17["✔ Focus:<br/>Analytical correctness + transparency"]
+    end
+
+    subgraph COP["Microsoft Copilot for D365"]
+        C1["✖ SQL paths hidden — opaque reasoning"]
+        C2["✖ May infer or approximate numeric results"]
+        C3["✖ Single opaque LLM chain (no routing control)"]
+        C4["✖ No custom logic or SQL transformation"]
+        C5["✖ Cloud-only execution"]
+        C6["✖ Data processed in Microsoft cloud"]
+        C7["✖ Internal LLM — cannot swap models"]
+        C8["✖ No visibility into embeddings or retrieval"]
+        C9["✖ Partial explanations only"]
+        C10["✖ May reframe instead of returning empty SQL results"]
+        C11["✖ Dependent on Microsoft compute latency"]
+        C12["✖ No offline support"]
+        C13["✖ Hard to validate outputs"]
+        C14["✖ Limited observability"]
+        C15["✖ Not extensible"]
+        C16["✖ No testing hooks"]
+        C17["✖ Focus:<br/>Productivity + natural language"]
+    end
+
+    A --> D365
+    A --> COP
+```
+
+---
+
 # ⚙️ Environment & GPU Acceleration (WSL Recommended)
 
 This project is intended to run inside **WSL 2 with GPU passthrough**, because:
@@ -230,8 +283,6 @@ Tests validate:
 
 # 📄 Example Test Output (Excerpt)
 
-A curated sample (not full file):
-
 ```
 QUESTION:
 For each SalesOrderStatus, calculate number of orders and total contribution.
@@ -242,8 +293,6 @@ ANSWER:
 - Invoiced → 708 orders
 ```
 
-Example of a query with no matching rows:
-
 ```
 QUESTION:
 For each month in 2024, compute export vs non-export orders.
@@ -251,8 +300,6 @@ For each month in 2024, compute export vs non-export orders.
 ANSWER:
 SQL returned no matching rows for your question.
 ```
-
-Hybrid output sample:
 
 ```
 QUESTION:
@@ -263,11 +310,6 @@ ANSWER:
 - US-006 → 25 orders
 - US-011 → 25 orders
 ...
-```
-
-Full log:  
-```
-app/tests/outputs.txt
 ```
 
 ---
@@ -323,6 +365,5 @@ pip install -r requirements.txt
 
 ---
 
-# 📜 License
+# 📜 License  
 Internal analytics tool. Not affiliated with Microsoft.
-
