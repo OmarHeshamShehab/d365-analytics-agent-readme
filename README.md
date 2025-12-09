@@ -32,7 +32,7 @@ flowchart TB
     A[📊 Capability Comparison:<br/>D365 Sales Analytics Agent vs. Microsoft Copilot]
 
     subgraph D365["Your D365 Sales Analytics Agent"]
-        T1["✔ Data Source Transparency<br/>Shows exact SQL for every numeric result"]
+        T1["   ✔ Data Source Transparency<br/>Shows exact SQL for every numeric result"]
         T2["✔ Numeric Accuracy<br/>Zero hallucinations — SQL is the source of truth"]
         T3["✔ Execution Mode:<br/>Hybrid SQL → RAG → LLM (explainable)"]
         T4["✔ Customizability:<br/>SQL templates, synonyms, routing, thresholds"]
